@@ -18,7 +18,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       slug = `/${dir}/`;
     }
 
-    // Add slug as a field on the node.
+    // Add slug as a field on the node in this step.
     createNodeField({ node, name: 'slug', value: slug });
   }
 };
@@ -28,7 +28,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const Article = path.resolve('src/templates/Article.js');
-    // Query for all markdown 'nodes' and for the slug we previously created.
+    // Querying for all markdown 'nodes' and for the slug we previously created.
     resolve(
       graphql(
         `
